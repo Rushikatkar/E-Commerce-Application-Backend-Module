@@ -1,0 +1,6 @@
+@E_Commerce_Application_Backend_Module_HostAddress = http://localhost:5094
+
+GET {{E_Commerce_Application_Backend_Module_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

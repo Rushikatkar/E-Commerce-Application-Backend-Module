@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Frontend_MVC.Models.Product>
+
+<h2 class="text-center my-4">Product List</h2>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    @foreach (var product in Model)
+    {
+        <div class="col">
+            <div class="card h-100">
+                <img src="@product.ProductPhotoPath"
+                     class="card-img-top"
+                     alt="@product.ProductName"
+                     style="max-height: 200px; object-fit: cover;" />
+                <div class="card-body">
+                    <h5 class="card-title">@product.ProductName</h5>
+                    <p class="card-text text-truncate" title="@product.Description">@product.Description</p>
+                    <p class="card-text"><strong>Price:</strong> $@product.Price</p>
+                    <p class="card-text"><strong>Category:</strong> @product.CategoryName</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <form method="post" action="@Url.Action("AddToCart", "Cart")" class="d-inline">
+                        <input type="hidden" name="productId" value="@product.ProductId" />
+                        <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</div>
