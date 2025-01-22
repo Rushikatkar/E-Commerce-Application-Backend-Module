@@ -39,6 +39,10 @@
                             @Html.ActionLink("Logout", "Logout", "User", new { area = "" }, new { @class = "nav-link btn btn-outline-danger" })
                         </li>
                     }
+                    <!-- Add View Cart button -->
+                    <li class="nav-item">
+                        @Html.ActionLink("View Cart", "", "Cart", new { area = "" }, new { @class = "nav-link btn btn-outline-success ms-2" })
+                    </li>
                 </ul>
             </div>
         </div>
